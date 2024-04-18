@@ -57,7 +57,7 @@ public class ProductosRepo extends ConexionRepo implements IProductosRepo{
         return producto;
     }
     @Override
-    public void insertarProducto(Productos producto) throws SQLException, ClassNotFoundException {
+    public Productos insertarProducto(Productos producto) throws SQLException, ClassNotFoundException {
 
         int idProducto = producto.getIdProducto();
         int unidadesStock = producto.getUnidadesStock();
@@ -83,10 +83,10 @@ public class ProductosRepo extends ConexionRepo implements IProductosRepo{
             System.out.println("No se puede insertar porque ya existe");
         }
 
-
+        return producto;
     }
     @Override
-    public void actualizarProducto(Productos producto) throws SQLException, ClassNotFoundException {
+    public Productos actualizarProducto(Productos producto) throws SQLException, ClassNotFoundException {
 
 
         int idProducto = producto.getIdProducto();
@@ -109,6 +109,7 @@ public class ProductosRepo extends ConexionRepo implements IProductosRepo{
         else {
             System.out.println("No existe el producto");
         }
+        return producto;
     }
     @Override
     public void borrarProducto(int id) throws SQLException, ClassNotFoundException {

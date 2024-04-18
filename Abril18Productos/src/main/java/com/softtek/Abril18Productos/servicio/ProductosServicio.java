@@ -24,13 +24,13 @@ public class ProductosServicio implements IProductosServicio{
     }
 
     @Override
-    public void insertarProducto(Productos producto) throws ClassNotFoundException, SQLException {
-        repo.insertarProducto(producto);
+    public Productos insertarProducto(Productos producto) throws ClassNotFoundException, SQLException {
+        return repo.insertarProducto(producto);
     }
 
     @Override
-    public void actualizarProducto(Productos producto) throws ClassNotFoundException, SQLException {
-        repo.actualizarProducto(producto);
+    public Productos actualizarProducto(Productos producto) throws ClassNotFoundException, SQLException {
+        return repo.actualizarProducto(producto);
     }
 
     @Override

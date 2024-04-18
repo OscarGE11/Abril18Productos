@@ -26,12 +26,12 @@ public class ControladorProductos {
         return servicio.obtenerUno(id);
     }
     @PostMapping
-    public void insertarProducto(@RequestBody Productos producto) throws SQLException, ClassNotFoundException {
-        servicio.insertarProducto(producto);
+    public Productos insertarProducto(@RequestBody Productos producto) throws SQLException, ClassNotFoundException {
+        return servicio.insertarProducto(producto);
     }
     @PutMapping
-    public void actualizarProducto(@RequestBody Productos productos) throws SQLException, ClassNotFoundException {
-        servicio.actualizarProducto(productos);
+    public Productos actualizarProducto(@RequestBody Productos productos) throws SQLException, ClassNotFoundException {
+        return servicio.actualizarProducto(productos);
     }
     @DeleteMapping("/{id}")
     public void borrarProducto(@PathVariable int id) throws SQLException, ClassNotFoundException {
